@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="baO-cg-dmI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZlU-Pv-ZYt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Predictions Table View Controller-->
+        <!--Bus Stop Search-->
         <scene sceneID="aRO-ae-A1e">
             <objects>
                 <tableViewController id="baO-cg-dmI" customClass="PredictionsTableViewController" customModule="MuniPredictions" customModuleProvider="target" sceneMemberID="viewController">
@@ -56,10 +56,29 @@
                             <outlet property="delegate" destination="baO-cg-dmI" id="6As-U2-A8j"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Bus Stop Search" id="OFp-bi-q6z"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CMK-A1-FtR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="221" y="120"/>
+            <point key="canvasLocation" x="559.20000000000005" y="119.1904047976012"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yNb-zH-tRQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZlU-Pv-ZYt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f1U-EK-N4J">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="baO-cg-dmI" kind="relationship" relationship="rootViewController" id="Wr4-c0-Byd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ae2-SY-eld" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-183" y="119"/>
         </scene>
     </scenes>
 </document>

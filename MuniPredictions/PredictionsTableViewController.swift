@@ -43,7 +43,7 @@ class PredictionsTableViewController: UITableViewController, UISearchBarDelegate
     
     // MARK: - Helper method
     func search(idNumber: String) {
-        if let url = createURL(stopId: idNumber) {
+        if let url = createURL(route: "N_OWL", stopTag: "3164") {
             print(url)
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
                 print("in the completion handler for data task")
@@ -60,7 +60,7 @@ class PredictionsTableViewController: UITableViewController, UISearchBarDelegate
                     if let result = try? jsonDecoder.decode(PredictionsList.self, from: data) {
                         print("in results")
                         print(result)
-                        self.currentPredictions = result.predictions
+                        self.currentPredictions.append(result.predictions)
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                         }
