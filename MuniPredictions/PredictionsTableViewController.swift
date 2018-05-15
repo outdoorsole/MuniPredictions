@@ -11,6 +11,7 @@ import UIKit
 class PredictionsTableViewController: UITableViewController, UISearchBarDelegate {
 
     var searchedStopId: String?
+    var currentPredictions: [Prediction] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class PredictionsTableViewController: UITableViewController, UISearchBarDelegate
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return currentPredictions.count
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -59,21 +60,28 @@ class PredictionsTableViewController: UITableViewController, UISearchBarDelegate
                     if let result = try? jsonDecoder.decode(PredictionsList.self, from: data) {
                         print("in results")
                         print(result)
+                        self.currentPredictions = result.predictions
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
                     }
                 }
             }
             task.resume()
         }
     }
-    /*
+    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "predictionCell", for: indexPath)
 
         // Configure the cell...
-
+        cell.textLabel?.text = currentPredictions[indexPath.row].routeTitle
+        cell.detailTextLabel?.text = currentPredictions[indexPath.row].stopTitle
+        
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
