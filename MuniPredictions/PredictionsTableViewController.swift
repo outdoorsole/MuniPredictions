@@ -37,6 +37,7 @@ class PredictionsTableViewController: UITableViewController, UISearchBarDelegate
         if let searchId = searchBar.text {
             search(idNumber: searchId)
         }
+        searchBar.resignFirstResponder()
     }
     
     // MARK: - Helper method
@@ -53,6 +54,12 @@ class PredictionsTableViewController: UITableViewController, UISearchBarDelegate
                 
                 if let data = data {
                     print("data \(data)")
+                    let jsonDecoder = JSONDecoder()
+                    
+                    if let result = try? jsonDecoder.decode(PredictionsList.self, from: data) {
+                        print("in results")
+                        print(result)
+                    }
                 }
             }
             task.resume()
