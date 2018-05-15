@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PredictionsTableViewController: UITableViewController {
+class PredictionsTableViewController: UITableViewController, UISearchBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +33,9 @@ class PredictionsTableViewController: UITableViewController {
         return 0
     }
 
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("search bar search button pressed")
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
