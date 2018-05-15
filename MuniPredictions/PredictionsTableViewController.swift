@@ -10,12 +10,11 @@ import UIKit
 
 class PredictionsTableViewController: UITableViewController, UISearchBarDelegate {
 
+    var searchedStopId: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let url = createURL() {
-            print(url)
-        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -35,6 +34,29 @@ class PredictionsTableViewController: UITableViewController, UISearchBarDelegate
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print("search bar search button pressed")
+        if let searchId = searchBar.text {
+            search(idNumber: searchId)
+        }
+    }
+    
+    // MARK: - Helper method
+    func search(idNumber: String) {
+        if let url = createURL(stopId: idNumber) {
+            print(url)
+            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                print("in the completion handler for data task")
+                
+                if let error = error {
+                    print("error: \(error)")
+                    return
+                }
+                
+                if let data = data {
+                    print("data \(data)")
+                }
+            }
+            task.resume()
+        }
     }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

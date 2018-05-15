@@ -23,12 +23,12 @@ extension URL {
 // MARK: - Helper method
 
 // creates new URL to query next bus server with described search info
-func createURL() -> URL? {
+func createURL(stopId: String) -> URL? {
     // create query dictionary with selected
     let nextBusQuery: [String: String] = [
         "command": "predictions",
         "a": "sf-muni",
-        "stopId": "15195"
+        "stopId": stopId
     ]
     return nextBusBaseURL.withQueries(nextBusQuery)
 }
