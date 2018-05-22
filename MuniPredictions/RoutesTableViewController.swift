@@ -86,6 +86,8 @@ class RoutesTableViewController: UITableViewController {
         
         if let destination = segue.destination as? StopsTableViewController {
             print(destination)
+
+            destination.currentRouteLine = currentRoutes?.route[selectedRow]
         }
     }
 }
