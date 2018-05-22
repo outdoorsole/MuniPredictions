@@ -11,7 +11,7 @@ import UIKit
 class PredictionsTableViewController: UITableViewController, UISearchBarDelegate {
 
     var searchedStopId: String?
-    var currentPredictions: [Prediction] = []
+    var currentPredictions: [Route] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

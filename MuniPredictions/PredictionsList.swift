@@ -11,14 +11,14 @@ import Foundation
 // Struct modeled to store query data from next bus:
 // 1) predictions
 struct PredictionsList: Codable {
-    let predictions: Prediction
+    let predictions: Route
     
     enum CodingKeys: String, CodingKey {
         case predictions
     }
 }
 
-struct Prediction: Codable {
+struct Route: Codable {
     let agencyTitle: String
     let routeTag: String
     let routeTitle: String
