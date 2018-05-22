@@ -18,6 +18,7 @@
 		16F0EE9220B4707B005D765D /* RoutesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F0EE9120B4707B005D765D /* RoutesTableViewController.swift */; };
 		16F0EE9420B47CA3005D765D /* StopsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F0EE9320B47CA3005D765D /* StopsTableViewController.swift */; };
 		16F0EE9620B4877A005D765D /* RouteStopList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F0EE9520B4877A005D765D /* RouteStopList.swift */; };
+		16F0EE9820B4907F005D765D /* StopPredictionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F0EE9720B4907F005D765D /* StopPredictionTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		16F0EE9120B4707B005D765D /* RoutesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesTableViewController.swift; sourceTree = "<group>"; };
 		16F0EE9320B47CA3005D765D /* StopsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsTableViewController.swift; sourceTree = "<group>"; };
 		16F0EE9520B4877A005D765D /* RouteStopList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStopList.swift; sourceTree = "<group>"; };
+		16F0EE9720B4907F005D765D /* StopPredictionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopPredictionTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +74,10 @@
 				16CC282820AAC24200D9B687 /* PredictionsList.swift */,
 				16F0EE8F20B46DF0005D765D /* RouteList.swift */,
 				16F0EE9520B4877A005D765D /* RouteStopList.swift */,
-				16F0EE9320B47CA3005D765D /* StopsTableViewController.swift */,
-				16CC282220AAADDE00D9B687 /* PredictionsTableViewController.swift */,
 				16F0EE9120B4707B005D765D /* RoutesTableViewController.swift */,
+				16F0EE9320B47CA3005D765D /* StopsTableViewController.swift */,
+				16F0EE9720B4907F005D765D /* StopPredictionTableViewController.swift */,
+				16CC282220AAADDE00D9B687 /* PredictionsTableViewController.swift */,
 				16CC281720AAA50300D9B687 /* Assets.xcassets */,
 				16CC281920AAA50300D9B687 /* LaunchScreen.storyboard */,
 				16CC281C20AAA50300D9B687 /* Info.plist */,
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16F0EE9820B4907F005D765D /* StopPredictionTableViewController.swift in Sources */,
 				16CC282920AAC24200D9B687 /* PredictionsList.swift in Sources */,
 				16F0EE9020B46DF0005D765D /* RouteList.swift in Sources */,
 				16CC282320AAADDE00D9B687 /* PredictionsTableViewController.swift in Sources */,
