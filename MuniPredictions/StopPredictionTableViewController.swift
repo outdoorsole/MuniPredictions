@@ -41,7 +41,7 @@ class StopPredictionTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "stopPredictionCell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = currentPredictions?.predictions.direction.prediction[indexPath.row].minutes
+        cell.textLabel?.text = "\((currentPredictions?.predictions.direction.prediction[indexPath.row].minutes)!) minutes"
         
         return cell
     }
