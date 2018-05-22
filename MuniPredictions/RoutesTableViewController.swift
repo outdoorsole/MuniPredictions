@@ -11,6 +11,7 @@ import UIKit
 class RoutesTableViewController: UITableViewController {
 
     var currentRoutes: RouteList?
+    var selectedRow = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,4 +75,8 @@ class RoutesTableViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("row \(indexPath.row) was tapped")
+        selectedRow = indexPath.row
+    }
 }
