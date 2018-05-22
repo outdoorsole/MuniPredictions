@@ -38,8 +38,18 @@ struct Route: Codable {
 
 struct Direction: Codable {
     let title: String
+    let prediction: [Prediction]
     
     enum CodingKeys: String, CodingKey {
         case title = "title"
+        case prediction = "prediction"
+    }
+}
+
+struct Prediction: Codable {
+    let minutes: String
+    
+    enum CodingKeys: String, CodingKey {
+        case minutes = "minutes"
     }
 }
