@@ -145,15 +145,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="SF Muni Route List" id="mu7-lN-zz1"/>
+                    <connections>
+                        <segue destination="SYg-Or-jo0" kind="show" identifier="stopsSegue" id="e6i-HE-PtV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jei-HK-2ZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="436" y="142"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Stops Table View Controller-->
         <scene sceneID="pTu-Hi-sNd">
             <objects>
-                <tableViewController id="SYg-Or-jo0" sceneMemberID="viewController">
+                <tableViewController id="SYg-Or-jo0" customClass="StopsTableViewController" customModule="MuniPredictions" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WJo-Jy-6Rp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

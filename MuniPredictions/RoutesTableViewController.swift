@@ -78,5 +78,14 @@ class RoutesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("row \(indexPath.row) was tapped")
         selectedRow = indexPath.row
+        performSegue(withIdentifier: "stopsSegue", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("prepare for segue called")
+        
+        if let destination = segue.destination as? StopsTableViewController {
+            print(destination)
+        }
     }
 }
