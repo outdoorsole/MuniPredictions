@@ -10,8 +10,13 @@ import UIKit
 
 class RoutesTableViewController: UITableViewController {
 
+    var currentRoutes: RouteList?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Get current routes
+        getRoutes()
     }
 
     // MARK: - Table view data source
@@ -23,9 +28,39 @@ class RoutesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
 
+    // MARK: - Helper method
+    func getRoutes() {
+        if let url = routeListQueryURL() {
+            print(url)
+            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                print("in the completion handler for data task")
+                
+                if let error = error {
+                    print("error: \(error)")
+                    return
+                }
+                
+                if let data = data {
+                    print("data \(data)")
+                    let jsonDecoder = JSONDecoder()
+                    
+                    if let result = try? jsonDecoder.decode(RouteList.self, from: data) {
+                        print("in results")
+                        print(result)
+                        self.currentRoutes = result
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+            }
+            task.resume()
+        }
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
