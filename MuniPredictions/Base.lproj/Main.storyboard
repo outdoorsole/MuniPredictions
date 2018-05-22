@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -61,35 +60,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CMK-A1-FtR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="558" y="118"/>
-        </scene>
-        <!--SF Muni Route List-->
-        <scene sceneID="hou-MX-S9m">
-            <objects>
-                <viewController id="D7F-UM-W7R" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yrx-nY-9bW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o8j-Q8-rsO">
-                                <rect key="frame" x="0.0" y="164" width="375" height="454"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="o8j-Q8-rsO" firstAttribute="bottom" secondItem="dqi-5A-VTX" secondAttribute="bottom" id="C2S-Eu-2wO"/>
-                            <constraint firstItem="o8j-Q8-rsO" firstAttribute="leading" secondItem="dqi-5A-VTX" secondAttribute="leading" id="HVp-17-HX9"/>
-                            <constraint firstItem="o8j-Q8-rsO" firstAttribute="top" secondItem="dqi-5A-VTX" secondAttribute="top" constant="100" id="Sw0-aO-mK7"/>
-                            <constraint firstItem="o8j-Q8-rsO" firstAttribute="trailing" secondItem="dqi-5A-VTX" secondAttribute="trailing" id="lEc-y4-SDC"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="dqi-5A-VTX"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="SF Muni Route List" id="o8W-6N-TXg"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G9Z-IW-vL7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="559" y="829"/>
+            <point key="canvasLocation" x="436" y="878"/>
         </scene>
         <!--Predictions-->
         <scene sceneID="yNb-zH-tRQ">
@@ -108,7 +79,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ae2-SY-eld" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-183" y="119"/>
+            <point key="canvasLocation" x="-337" y="879"/>
         </scene>
         <!--Routes-->
         <scene sceneID="T9j-gk-8m8">
@@ -122,12 +93,41 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="D7F-UM-W7R" kind="relationship" relationship="rootViewController" id="1sF-fk-ekL"/>
+                        <segue destination="nP6-kH-GFT" kind="relationship" relationship="rootViewController" id="24F-Ye-BuT"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aVl-V2-ByC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-183" y="829"/>
+            <point key="canvasLocation" x="-338" y="142"/>
+        </scene>
+        <!--SF Muni Route List-->
+        <scene sceneID="CJk-rp-f6D">
+            <objects>
+                <tableViewController id="nP6-kH-GFT" customClass="RoutesTableViewController" customModule="MuniPredictions" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Yfz-Ka-4Cb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="MhP-cq-6mW">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MhP-cq-6mW" id="04T-wb-44U">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nP6-kH-GFT" id="hOv-Lr-NME"/>
+                            <outlet property="delegate" destination="nP6-kH-GFT" id="tPF-Ux-yg3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="SF Muni Route List" id="mu7-lN-zz1"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jei-HK-2ZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="436" y="142"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="seW-fL-vcz">
@@ -139,8 +139,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="ZlU-Pv-ZYt" kind="relationship" relationship="viewControllers" id="ueC-3V-dIX"/>
                         <segue destination="qjY-ks-zeP" kind="relationship" relationship="viewControllers" id="Eq3-GF-gYA"/>
+                        <segue destination="ZlU-Pv-ZYt" kind="relationship" relationship="viewControllers" id="ueC-3V-dIX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFA-Bs-v9N" userLabel="First Responder" sceneMemberID="firstResponder"/>

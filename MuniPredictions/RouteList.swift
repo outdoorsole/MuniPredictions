@@ -12,7 +12,7 @@ struct RouteList: Codable {
     let route: [RouteLine]
     
     enum CodingKeys: String, CodingKey {
-        let route = "route"
+        case route = "route"
     }
 }
 
@@ -21,7 +21,7 @@ struct RouteLine: Codable {
     let tag: String
     
     enum CodingKeys: String, CodingKey {
-        let title = "title"
-        let tag = "tag"
+        case title = "title"
+        case tag = "tag"
     }
 }
