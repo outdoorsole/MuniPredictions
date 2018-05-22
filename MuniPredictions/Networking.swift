@@ -33,3 +33,11 @@ func createURL(route: String, stopTag: String) -> URL? {
     ]
     return nextBusBaseURL.withQueries(nextBusQuery)
 }
+
+func routeListQueryURL() -> URL? {
+    let nextBusQuery: [String: String] = [
+        "command": "routeList",
+        "a": "sf-muni"
+    ]
+    return nextBusBaseURL.withQueries(nextBusQuery)
+}

@@ -63,7 +63,7 @@
             </objects>
             <point key="canvasLocation" x="558" y="118"/>
         </scene>
-        <!--View Controller-->
+        <!--SF Muni Route List-->
         <scene sceneID="hou-MX-S9m">
             <objects>
                 <viewController id="D7F-UM-W7R" sceneMemberID="viewController">
@@ -85,7 +85,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dqi-5A-VTX"/>
                     </view>
-                    <navigationItem key="navigationItem" id="iad-r3-gpS"/>
+                    <navigationItem key="navigationItem" title="SF Muni Route List" id="o8W-6N-TXg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G9Z-IW-vL7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
