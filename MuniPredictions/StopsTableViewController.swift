@@ -92,6 +92,7 @@ class StopsTableViewController: UITableViewController {
             
             destination.currentRouteLine = currentRouteLine?.tag
             destination.currentStop = currentStops?.route.stop[selectedRow]
+            destination.navigationItem.title = "\((currentRouteLine?.tag)!) Line Predictions"
         }
     }
 

@@ -90,7 +90,7 @@
             </objects>
             <point key="canvasLocation" x="-338" y="142"/>
         </scene>
-        <!--SF Muni Route List-->
+        <!--SF Muni Routes-->
         <scene sceneID="CJk-rp-f6D">
             <objects>
                 <tableViewController id="nP6-kH-GFT" customClass="RoutesTableViewController" customModule="MuniPredictions" customModuleProvider="target" sceneMemberID="viewController">
@@ -129,7 +129,7 @@
                             <outlet property="delegate" destination="nP6-kH-GFT" id="tPF-Ux-yg3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="SF Muni Route List" id="mu7-lN-zz1"/>
+                    <navigationItem key="navigationItem" title="SF Muni Routes" id="mu7-lN-zz1"/>
                     <connections>
                         <segue destination="SYg-Or-jo0" kind="show" identifier="stopsSegue" id="e6i-HE-PtV"/>
                     </connections>
@@ -138,7 +138,7 @@
             </objects>
             <point key="canvasLocation" x="436" y="142"/>
         </scene>
-        <!--Stops Table View Controller-->
+        <!--Stops-->
         <scene sceneID="pTu-Hi-sNd">
             <objects>
                 <tableViewController id="SYg-Or-jo0" customClass="StopsTableViewController" customModule="MuniPredictions" customModuleProvider="target" sceneMemberID="viewController">
@@ -177,6 +177,7 @@
                             <outlet property="delegate" destination="SYg-Or-jo0" id="oDq-OI-5p1"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Stops" id="Kzl-4r-zda"/>
                     <connections>
                         <segue destination="OLe-Qf-10u" kind="show" identifier="predictionsSegue" id="vBv-YJ-rdQ"/>
                     </connections>
@@ -185,7 +186,7 @@
             </objects>
             <point key="canvasLocation" x="1215" y="146"/>
         </scene>
-        <!--Stop Prediction Table View Controller-->
+        <!--Predictions-->
         <scene sceneID="U8y-NZ-uWa">
             <objects>
                 <tableViewController id="OLe-Qf-10u" customClass="StopPredictionTableViewController" customModule="MuniPredictions" customModuleProvider="target" sceneMemberID="viewController">
@@ -193,12 +194,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="YzM-1D-WmZ">
+                            <rect key="frame" x="0.0" y="97" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MpO-mc-BAF">
+                                    <rect key="frame" x="114" y="7" width="147" height="30"/>
+                                    <state key="normal" title="Add to Favorite Stops"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="MpO-mc-BAF" firstAttribute="centerX" secondItem="YzM-1D-WmZ" secondAttribute="centerX" id="Dr9-ys-l5o"/>
+                                <constraint firstItem="MpO-mc-BAF" firstAttribute="centerY" secondItem="YzM-1D-WmZ" secondAttribute="centerY" id="Ibk-7v-ciM"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="stopPredictionCell" id="716-dw-ezt">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="stopPredictionCell" rowHeight="69" id="716-dw-ezt">
+                                <rect key="frame" x="0.0" y="28" width="375" height="69"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="716-dw-ezt" id="w8l-Db-CIW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="68.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -208,10 +224,11 @@
                             <outlet property="delegate" destination="OLe-Qf-10u" id="hVX-Ge-YVI"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Predictions" id="s19-nI-2FR"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJc-Bt-g7b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1980" y="145"/>
+            <point key="canvasLocation" x="1980" y="144.3778110944528"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="seW-fL-vcz">
