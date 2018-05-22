@@ -12,6 +12,7 @@ class StopsTableViewController: UITableViewController {
 
     var currentRouteLine: RouteLine?
     var currentStops: RouteStopList?
+    var selectedRow = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +76,12 @@ class StopsTableViewController: UITableViewController {
         cell.textLabel?.text = currentStops?.route.stop[indexPath.row].title
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("row \(indexPath.row) was tapped")
+        selectedRow = indexPath.row
+        performSegue(withIdentifier: "predictionsSegue", sender: nil)
     }
 
 }
