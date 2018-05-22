@@ -9,9 +9,13 @@
 import UIKit
 
 class StopPredictionTableViewController: UITableViewController {
-
+    
+    var currentStop: Stop?
+    var currentPredictions: PredictionsList?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        getStopPredictions(routeTag: "N", stopTag: "4510")
     }
 
 
@@ -36,5 +40,37 @@ class StopPredictionTableViewController: UITableViewController {
         return cell
     }
     */
+    
+    // MARK: - Helper method
+    func getStopPredictions(routeTag: String, stopTag: String) {
+        if let url = createStopPredictionListURL(routeTag: routeTag, stopTag: stopTag) {
+            print(url)
+            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                print("in the completion handler for data task")
+                
+                if let error = error {
+                    print("error: \(error)")
+                    return
+                }
+                
+                if let data = data {
+                    print("data \(data)")
+                    let jsonDecoder = JSONDecoder()
+                    
+                    if let result = try? jsonDecoder.decode(PredictionsList.self, from: data) {
+                        print("in results")
+                        print(result)
+                        print("End of Stop Predictions List")
+                        print("--------------------")
+                        self.currentPredictions = result
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+            }
+            task.resume()
+        }
+    }
 
 }

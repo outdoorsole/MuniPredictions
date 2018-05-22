@@ -20,20 +20,9 @@ extension URL {
     }
 }
 
-// MARK: - Helper method
+// MARK: - Helper methods
 
 // creates new URL to query next bus server with described search info
-func createURL(route: String, stopTag: String) -> URL? {
-    // create query dictionary with selected
-    let nextBusQuery: [String: String] = [
-        "command": "predictions",
-        "a": "sf-muni",
-        "r": route,
-        "s": stopTag
-    ]
-    return nextBusBaseURL.withQueries(nextBusQuery)
-}
-
 func routeListQueryURL() -> URL? {
     let nextBusQuery: [String: String] = [
         "command": "routeList",
@@ -47,6 +36,17 @@ func stopListQueryURL(route: String) -> URL? {
         "command": "routeConfig",
         "a": "sf-muni",
         "r": route
+    ]
+    return nextBusBaseURL.withQueries(nextBusQuery)
+}
+
+func createStopPredictionListURL(routeTag: String, stopTag: String) -> URL? {
+    // create query dictionary with selected
+    let nextBusQuery: [String: String] = [
+        "command": "predictions",
+        "a": "sf-muni",
+        "r": routeTag,
+        "s": stopTag
     ]
     return nextBusBaseURL.withQueries(nextBusQuery)
 }

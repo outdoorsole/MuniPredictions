@@ -54,6 +54,8 @@ class StopsTableViewController: UITableViewController {
                     if let result = try? jsonDecoder.decode(RouteStopList.self, from: data) {
                         print("in results")
                         print(result)
+                        print("End of Stops List")
+                        print("--------------------")
                         self.currentStops = result
                         DispatchQueue.main.async {
                             self.tableView.reloadData()

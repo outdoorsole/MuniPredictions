@@ -54,6 +54,8 @@ class RoutesTableViewController: UITableViewController {
                     if let result = try? jsonDecoder.decode(RouteList.self, from: data) {
                         print("in results")
                         print(result)
+                        print("End of Routes List")
+                        print("--------------------")
                         self.currentRoutes = result
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
