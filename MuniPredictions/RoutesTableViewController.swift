@@ -70,7 +70,6 @@ class RoutesTableViewController: UITableViewController {
 
         // Configure the cell...
         cell.textLabel?.text = currentRoutes?.route[indexPath.row].title
-        cell.detailTextLabel?.text = currentRoutes?.route[indexPath.row].tag
         
         return cell
     }
