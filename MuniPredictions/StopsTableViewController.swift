@@ -83,5 +83,16 @@ class StopsTableViewController: UITableViewController {
         selectedRow = indexPath.row
         performSegue(withIdentifier: "predictionsSegue", sender: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("prepare for segue called")
+        
+        if let destination = segue.destination as? StopPredictionTableViewController {
+            print(destination)
+            
+            destination.currentRouteLine = currentRouteLine?.tag
+            destination.currentStop = currentStops?.route.stop[selectedRow]
+        }
+    }
 
 }

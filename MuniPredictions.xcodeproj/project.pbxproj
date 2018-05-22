@@ -11,7 +11,6 @@
 		16CC281620AAA50300D9B687 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16CC281420AAA50300D9B687 /* Main.storyboard */; };
 		16CC281820AAA50300D9B687 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16CC281720AAA50300D9B687 /* Assets.xcassets */; };
 		16CC281B20AAA50300D9B687 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16CC281920AAA50300D9B687 /* LaunchScreen.storyboard */; };
-		16CC282320AAADDE00D9B687 /* PredictionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CC282220AAADDE00D9B687 /* PredictionsTableViewController.swift */; };
 		16CC282720AAAF2100D9B687 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CC282620AAAF2100D9B687 /* Networking.swift */; };
 		16CC282920AAC24200D9B687 /* PredictionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CC282820AAC24200D9B687 /* PredictionsList.swift */; };
 		16F0EE9020B46DF0005D765D /* RouteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F0EE8F20B46DF0005D765D /* RouteList.swift */; };
@@ -28,7 +27,6 @@
 		16CC281720AAA50300D9B687 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16CC281A20AAA50300D9B687 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16CC281C20AAA50300D9B687 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		16CC282220AAADDE00D9B687 /* PredictionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsTableViewController.swift; sourceTree = "<group>"; };
 		16CC282620AAAF2100D9B687 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		16CC282820AAC24200D9B687 /* PredictionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionsList.swift; sourceTree = "<group>"; };
 		16F0EE8F20B46DF0005D765D /* RouteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteList.swift; sourceTree = "<group>"; };
@@ -77,7 +75,6 @@
 				16F0EE9120B4707B005D765D /* RoutesTableViewController.swift */,
 				16F0EE9320B47CA3005D765D /* StopsTableViewController.swift */,
 				16F0EE9720B4907F005D765D /* StopPredictionTableViewController.swift */,
-				16CC282220AAADDE00D9B687 /* PredictionsTableViewController.swift */,
 				16CC281720AAA50300D9B687 /* Assets.xcassets */,
 				16CC281920AAA50300D9B687 /* LaunchScreen.storyboard */,
 				16CC281C20AAA50300D9B687 /* Info.plist */,
@@ -160,7 +157,6 @@
 				16F0EE9820B4907F005D765D /* StopPredictionTableViewController.swift in Sources */,
 				16CC282920AAC24200D9B687 /* PredictionsList.swift in Sources */,
 				16F0EE9020B46DF0005D765D /* RouteList.swift in Sources */,
-				16CC282320AAADDE00D9B687 /* PredictionsTableViewController.swift in Sources */,
 				16F0EE9620B4877A005D765D /* RouteStopList.swift in Sources */,
 				16F0EE9220B4707B005D765D /* RoutesTableViewController.swift in Sources */,
 				16F0EE9420B47CA3005D765D /* StopsTableViewController.swift in Sources */,

@@ -18,22 +18,22 @@ struct RouteStopList: Codable {
 
 struct RouteStop: Codable {
     let title: String
+    let routeTag: String
     let stop: [Stop]
     
     enum CodingKeys: String, CodingKey {
         case title = "title"
+        case routeTag = "tag"
         case stop = "stop"
     }
 }
 
 struct Stop: Codable {
     let title: String
-    let stopId: String
-    let tag: String
+    let stopTag: String
     
     enum CodingKeys: String, CodingKey {
         case title = "title"
-        case stopId = "stopId"
-        case tag = "tag"
+        case stopTag = "tag"
     }
 }

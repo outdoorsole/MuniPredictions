@@ -9,13 +9,15 @@
 import UIKit
 
 class StopPredictionTableViewController: UITableViewController {
-    
+    var currentRouteLine: String?
     var currentStop: Stop?
     var currentPredictions: PredictionsList?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getStopPredictions(routeTag: "N", stopTag: "4510")
+        getStopPredictions(routeTag: currentRouteLine!, stopTag: (currentStop?.stopTag)!)
+        print("currentRouteLine: \(currentRouteLine)")
+        print("currentStop: \(currentStop)")
     }
 
 
@@ -28,18 +30,22 @@ class StopPredictionTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if currentPredictions != nil {
+            return (currentPredictions?.predictions.direction.prediction.count)!
+        }
         return 0
     }
 
-    /*
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "stopPredictionCell", for: indexPath)
 
         // Configure the cell...
-
+        cell.textLabel?.text = currentPredictions?.predictions.direction.prediction[indexPath.row].minutes
+        
         return cell
     }
-    */
+
     
     // MARK: - Helper method
     func getStopPredictions(routeTag: String, stopTag: String) {
