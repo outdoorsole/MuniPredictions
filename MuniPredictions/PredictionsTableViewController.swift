@@ -11,7 +11,7 @@ import UIKit
 class PredictionsTableViewController: UITableViewController, UISearchBarDelegate {
 
     var searchedStopId: String?
-    var currentPredictions: [Route] = []
+    var currentPredictions: PredictionsList?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +30,16 @@ class PredictionsTableViewController: UITableViewController, UISearchBarDelegate
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return currentPredictions.count
+        if currentPredictions == nil {
+            return 0
+        } else {
+            return currentPredictions!.predictions.direction.prediction.count
+        }
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print("search bar search button pressed")
         if let searchTag = searchBar.text {
-            currentPredictions = []
             search(stopTag: searchTag)
         }
         searchBar.resignFirstResponder()
@@ -61,7 +64,7 @@ class PredictionsTableViewController: UITableViewController, UISearchBarDelegate
                     if let result = try? jsonDecoder.decode(PredictionsList.self, from: data) {
                         print("in results")
                         print(result)
-                        self.currentPredictions.append(result.predictions)
+                        self.currentPredictions = result
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                         }
@@ -77,8 +80,8 @@ class PredictionsTableViewController: UITableViewController, UISearchBarDelegate
         let cell = tableView.dequeueReusableCell(withIdentifier: "predictionCell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = currentPredictions[indexPath.row].routeTitle
-        cell.detailTextLabel?.text = currentPredictions[indexPath.row].stopTitle
+        cell.textLabel?.text = currentPredictions?.predictions.direction.title
+        cell.detailTextLabel?.text = currentPredictions?.predictions.direction.prediction[indexPath.row].minutes
         
         return cell
     }
