@@ -24,6 +24,7 @@ struct Prediction: Codable {
     let routeTitle: String
     let stopTitle: String
     let stopTag: String
+    let direction: Direction
     
     enum CodingKeys: String, CodingKey {
         case agencyTitle = "agencyTitle"
@@ -31,5 +32,14 @@ struct Prediction: Codable {
         case routeTitle = "routeTitle"
         case stopTitle = "stopTitle"
         case stopTag = "stopTag"
+        case direction = "direction"
+    }
+}
+
+struct Direction: Codable {
+    let title: String
+    
+    enum CodingKeys: String, CodingKey {
+        case title = "title"
     }
 }

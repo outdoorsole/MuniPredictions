@@ -35,15 +35,16 @@ class PredictionsTableViewController: UITableViewController, UISearchBarDelegate
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print("search bar search button pressed")
-        if let searchId = searchBar.text {
-            search(idNumber: searchId)
+        if let searchTag = searchBar.text {
+            currentPredictions = []
+            search(stopTag: searchTag)
         }
         searchBar.resignFirstResponder()
     }
     
     // MARK: - Helper method
-    func search(idNumber: String) {
-        if let url = createURL(route: "N_OWL", stopTag: "3164") {
+    func search(stopTag: String) {
+        if let url = createURL(route: "N", stopTag: stopTag) {
             print(url)
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
                 print("in the completion handler for data task")
