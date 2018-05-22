@@ -16,7 +16,7 @@ class StopsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("currentRouteLine: \(currentRouteLine)")
+        print("currentRouteLine: \(String(describing: currentRouteLine))")
         getStops()
     }
 
@@ -29,6 +29,9 @@ class StopsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if currentStops != nil {
+            return (currentStops?.route.stop.count)!
+        }
         return 0
     }
     
@@ -62,14 +65,14 @@ class StopsTableViewController: UITableViewController {
         }
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "stopCell", for: indexPath)
 
         // Configure the cell...
-
+        cell.textLabel?.text = currentStops?.route.stop[indexPath.row].title
+        
         return cell
     }
-    */
 
 }
