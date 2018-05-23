@@ -10,6 +10,8 @@ import UIKit
 
 class FavoritesTableViewController: UITableViewController {
 
+    var selectedRow = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -39,5 +41,22 @@ class FavoritesTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("row \(indexPath.row) was tapped")
+        selectedRow = indexPath.row
+        performSegue(withIdentifier: "favoritePredictionSegue", sender: nil)
+    }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("prepare for segue called")
+        
+        if let destination = segue.destination as? FavoritePredictionTableViewController {
+            print(destination)
+            
+            destination.currentRouteLine = favorites.favoriteStops[selectedRow].predictions.routeTag
+            destination.currentStopTag = favorites.favoriteStops[selectedRow].predictions.stopTag
+            destination.navigationItem.title = "\(favorites.favoriteStops[selectedRow].predictions.routeTag) Line Predictions"
+        }
+    }
 }

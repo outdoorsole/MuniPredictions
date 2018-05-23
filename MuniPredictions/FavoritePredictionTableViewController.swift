@@ -1,5 +1,5 @@
 //
-//  StopPredictionTableViewController.swift
+//  FavoritePredictionTableViewController.swift
 //  MuniPredictions
 //
 //  Created by Maribel Montejano on 5/22/18.
@@ -8,20 +8,17 @@
 
 import UIKit
 
-class StopPredictionTableViewController: UITableViewController {
+class FavoritePredictionTableViewController: UITableViewController {
+
     var currentRouteLine: String?
-    var currentStop: Stop?
+    var currentStopTag: String?
     var currentRouteStop: RouteStop?
     var currentPredictions: PredictionsList?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        getStopPredictions(routeTag: currentRouteLine!, stopTag: (currentStop?.stopTag)!)
-        print("currentRouteLine: \(String(describing: currentRouteLine))")
-        print("currentStop: \(currentStop!)")
+        getStopPredictions(routeTag: currentRouteLine!, stopTag: currentStopTag!)
     }
-
 
     // MARK: - Table view data source
 
@@ -31,7 +28,6 @@ class StopPredictionTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         if currentPredictions != nil {
             return (currentPredictions?.predictions.direction.prediction.count)!
         }
@@ -40,7 +36,7 @@ class StopPredictionTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "stopPredictionCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "favoritePredictionCell", for: indexPath)
 
         // Configure the cell...
         cell.textLabel?.text = "\((currentPredictions?.predictions.direction.prediction[indexPath.row].minutes)!) minutes"
@@ -48,7 +44,6 @@ class StopPredictionTableViewController: UITableViewController {
         return cell
     }
 
-    
     // MARK: - Helper method
     func getStopPredictions(routeTag: String, stopTag: String) {
         if let url = createStopPredictionListURL(routeTag: routeTag, stopTag: stopTag) {
@@ -68,7 +63,7 @@ class StopPredictionTableViewController: UITableViewController {
                     if let result = try? jsonDecoder.decode(PredictionsList.self, from: data) {
                         print("in results")
                         print(result)
-                        print("End of Stop Predictions List")
+                        print("End of Favorite Prediction List")
                         print("--------------------")
                         self.currentPredictions = result
                         DispatchQueue.main.async {
@@ -81,9 +76,4 @@ class StopPredictionTableViewController: UITableViewController {
         }
     }
 
-    @IBAction func addToFavoritesPressed(_ sender: UIButton) {
-        print("Add to favorites button pressed")
-        favorites.favoriteStops.append(currentPredictions!)
-    }
-    
 }
