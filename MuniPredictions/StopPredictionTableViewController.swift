@@ -11,6 +11,7 @@ import UIKit
 class StopPredictionTableViewController: UITableViewController {
     var currentRouteLine: String?
     var currentStop: Stop?
+    var currentRouteStop: RouteStop?
     var currentPredictions: PredictionsList?
     
     
@@ -82,7 +83,7 @@ class StopPredictionTableViewController: UITableViewController {
 
     @IBAction func addToFavoritesPressed(_ sender: UIButton) {
         print("Add to favorites button pressed")
-        favorites.favoriteStops.append(currentStop!)
+        favorites.favoriteStops.append(currentPredictions!)
     }
     
 }

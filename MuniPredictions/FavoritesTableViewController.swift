@@ -34,7 +34,8 @@ class FavoritesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteStopCell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = favorites.favoriteStops[indexPath.row].title
+        cell.textLabel?.text = favorites.favoriteStops[indexPath.row].predictions.routeTag
+        cell.detailTextLabel?.text = favorites.favoriteStops[indexPath.row].predictions.stopTitle
         
         return cell
     }

@@ -9,7 +9,7 @@
 import Foundation
 
 class Favorites {
-    var favoriteStops = [Stop]()
+    var favoriteStops = [PredictionsList]()
 }
 
 let favorites = Favorites()
