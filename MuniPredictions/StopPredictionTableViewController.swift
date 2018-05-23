@@ -13,6 +13,7 @@ class StopPredictionTableViewController: UITableViewController {
     var currentStop: Stop?
     var currentPredictions: PredictionsList?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getStopPredictions(routeTag: currentRouteLine!, stopTag: (currentStop?.stopTag)!)
@@ -79,4 +80,9 @@ class StopPredictionTableViewController: UITableViewController {
         }
     }
 
+    @IBAction func addToFavoritesPressed(_ sender: UIButton) {
+        print("Add to favorites button pressed")
+        favorites.favoriteStops.append(currentStop!)
+    }
+    
 }

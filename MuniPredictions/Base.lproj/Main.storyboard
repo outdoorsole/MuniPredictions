@@ -33,10 +33,10 @@
             </objects>
             <point key="canvasLocation" x="-337" y="879"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Favorites-->
         <scene sceneID="oSy-4d-gM5">
             <objects>
-                <tableViewController id="HOF-yo-G2r" sceneMemberID="viewController">
+                <tableViewController id="HOF-yo-G2r" customClass="FavoritesTableViewController" customModule="MuniPredictions" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="33B-fP-WMx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,7 +65,7 @@
                             <outlet property="delegate" destination="HOF-yo-G2r" id="6fr-Ws-Qmd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Z8Y-XZ-YMy"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="Dn5-xw-b7l"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ln-oh-36h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -201,6 +201,9 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MpO-mc-BAF">
                                     <rect key="frame" x="114" y="7" width="147" height="30"/>
                                     <state key="normal" title="Add to Favorite Stops"/>
+                                    <connections>
+                                        <action selector="addToFavoritesPressed:" destination="OLe-Qf-10u" eventType="touchUpInside" id="i5v-68-0hc"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
