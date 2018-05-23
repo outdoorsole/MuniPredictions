@@ -11,7 +11,6 @@ import UIKit
 class StopPredictionTableViewController: UITableViewController {
     var currentRouteLine: String?
     var currentStop: Stop?
-    var currentRouteStop: RouteStop?
     var currentPredictions: PredictionsList?
     
     
